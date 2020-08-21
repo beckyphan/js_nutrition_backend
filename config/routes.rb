@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'logs/index'
+  get 'logs/create'
+  get 'logs/show'
+  get 'logs/edit'
   namespace :api do
     namespace :v1 do
       get 'users/create'
