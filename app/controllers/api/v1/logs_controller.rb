@@ -8,6 +8,6 @@ class Api::V1::LogsController < ApplicationController
   def show
   end
 
-  def edit
+  def update
   end
 end
