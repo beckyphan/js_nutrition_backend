@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    namespace :v1 do
+      get 'log/index'
+      get 'log/create'
+      get 'log/show'
+      get 'log/update'
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create]
       post '/login', to: 'users#login'
-      resources :logs, only: [:index, :create, :show, :edit]
+      resources :logs, only: [:index, :create, :show, :update]
       resources :logged_foods, only: [:index, :create, :edit, :destroy]
       resources :foods, only: [:index, :create, :edit, :destroy]
     end
