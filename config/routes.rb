@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create, :show]
+      resources :users, only: [:create]
+      post '/login', to: 'users#login'
       resources :logs, only: [:index, :create, :show, :edit]
       resources :logged_foods, only: [:index, :create, :edit, :destroy]
       resources :foods, only: [:index, :create, :edit, :destroy]
