@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create]
       post '/login', to: 'users#login'
-      resources :logs, only: [:index, :create, :show, :update]
+      resources :logs, only: [:index]
+      resources :users do
+        resources :logs, only: [:create, :show, :update]
+      end
       resources :logged_foods, only: [:index, :create, :edit, :destroy]
       resources :foods, only: [:index, :create, :edit, :destroy]
     end
