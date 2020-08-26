@@ -1,4 +1,4 @@
-class Api::V1::FoodController < ApplicationController
+class Api::V1::FoodsController < ApplicationController
   def index
     @foods = Food.all
     render json: FoodSerializer.new(@foods), status: 200
