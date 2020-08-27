@@ -39,7 +39,10 @@ class Log < ApplicationRecord
 
   def loggedFoods
     loggedFoods = []
-    self.foods.each {|food| loggedFoods.push(food.quantity.to_s + " " + food.unit + " of " + food.name)}
+    self.foods.each do |food|
+      linked_entry = LogFood.find_by(log_id: self.id, food_id: food.id)
+      loggedFoods.push(linked_entry.quantity.to_s + " " + food.unit + " of " + food.name)
+    end
     return loggedFoods
   end
 end
