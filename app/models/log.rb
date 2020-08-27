@@ -39,7 +39,7 @@ class Log < ApplicationRecord
 
   def loggedFoods
     loggedFoods = []
-    self.foods.each {|food| loggedFoods.push(food.quantity.to_s + " " + food.unit + "of" + food.name)}
+    self.foods.each {|food| loggedFoods.push(food.quantity.to_s + " " + food.unit + " of " + food.name)}
     return loggedFoods
   end
 end
