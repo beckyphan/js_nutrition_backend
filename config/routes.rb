@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :users do
         resources :logs, only: [:create, :show, :update]
       end
-      resources :logged_foods, only: [:index, :create, :edit, :destroy]
+      resources :log_foods, only: [:index, :create, :update, :destroy]
       resources :foods, only: [:index, :create, :update, :destroy]
     end
   end
