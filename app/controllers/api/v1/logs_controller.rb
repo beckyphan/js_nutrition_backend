@@ -21,8 +21,8 @@ class Api::V1::LogsController < ApplicationController
     render json: LogSerializer.new(@log), status: 200
   end
 
-  def update
-  end
+  # def update
+  # end
 
   private
   def log_param
