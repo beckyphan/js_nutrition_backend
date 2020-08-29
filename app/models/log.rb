@@ -6,9 +6,11 @@ class Log < ApplicationRecord
 
   def totalCarb
     total = 0;
-    self.foods.each do |food|
-      linked_entry = LogFood.find_by(log_id: self.id, food_id: food.id)
-      quantity = linked_entry.quantity
+    linked_entries = LogFood.linked(self.id)
+    copied_entries = linked_entries
+    copied_entries.each do |entry|
+      food = Food.find_by(id: entry.food_id)
+      quantity = entry.quantity
       multiplier = quantity.to_f / food.quantity
       total += (food.carb * multiplier)
     end
@@ -17,9 +19,11 @@ class Log < ApplicationRecord
 
   def totalProtein
     total = 0;
-    self.foods.each do |food|
-      linked_entry = LogFood.find_by(log_id: self.id, food_id: food.id)
-      quantity = linked_entry.quantity
+    linked_entries = LogFood.linked(self.id)
+    copied_entries = linked_entries
+    copied_entries.each do |entry|
+      food = Food.find_by(id: entry.food_id)
+      quantity = entry.quantity
       multiplier = quantity.to_f / food.quantity
       total += (food.protein * multiplier)
     end
@@ -28,9 +32,11 @@ class Log < ApplicationRecord
 
   def totalFat
     total = 0;
-    self.foods.each do |food|
-      linked_entry = LogFood.find_by(log_id: self.id, food_id: food.id)
-      quantity = linked_entry.quantity
+    linked_entries = LogFood.linked(self.id)
+    copied_entries = linked_entries
+    copied_entries.each do |entry|
+      food = Food.find_by(id: entry.food_id)
+      quantity = entry.quantity
       multiplier = quantity.to_f / food.quantity
       total += (food.fat * multiplier)
     end
@@ -39,9 +45,11 @@ class Log < ApplicationRecord
 
   def loggedFoods
     loggedFoods = []
-    self.foods.each do |food|
-      linked_entry = LogFood.find_by(log_id: self.id, food_id: food.id)
-      loggedFoods.push(linked_entry.quantity.to_s + " " + food.unit + " of " + food.name)
+    linked_entries = LogFood.linked(self.id)
+    copied_entries = linked_entries
+    copied_entries.each do |entry|
+      food = Food.find_by(id: entry.food_id)
+      loggedFoods.push(entry.quantity.to_s + " " + food.unit + " of " + food.name)
     end
     return loggedFoods
   end

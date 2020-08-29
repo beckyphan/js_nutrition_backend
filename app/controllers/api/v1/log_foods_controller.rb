@@ -8,7 +8,6 @@ class Api::V1::LogFoodsController < ApplicationController
     @log = Log.find_by(caldate: params[:logDate])
     @log_food = LogFood.new(log_food_params)
     @log_food.log_id = @log.id
-
     if @log_food.save!
       render json: LogFoodSerializer.new(@log_food), status: 200
     end
