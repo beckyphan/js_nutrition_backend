@@ -17,6 +17,8 @@ class Api::V1::LogFoodsController < ApplicationController
   end
 
   def destroy
+    @log_food = LogFood.find_by(id: params[:id])
+    @log_food.destroy
   end
 
   private

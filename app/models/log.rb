@@ -20,6 +20,7 @@ class Log < ApplicationRecord
       total_protein += (food.protein * multiplier)
       total_fat += (food.fat * multiplier)
     end
+    
     total.push(total_carb)
     total.push(total_protein)
     total.push(total_fat)
