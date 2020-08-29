@@ -1,6 +1,6 @@
 class LogSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :caldate, :totalCarb, :totalProtein, :totalFat, :loggedFoods
+  attributes :caldate, :nutrition_totals, :loggedFoods
   has_many :log_foods
 
 end
