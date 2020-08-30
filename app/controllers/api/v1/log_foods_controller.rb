@@ -18,7 +18,9 @@ class Api::V1::LogFoodsController < ApplicationController
 
   def destroy
     @log_food = LogFood.find_by(id: params[:id])
+    @log = Log.find_by_id(@log_food.log_id)
     @log_food.destroy
+    render json: LogSerializer.new(@log), status: 200
   end
 
   private
