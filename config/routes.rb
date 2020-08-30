@@ -8,10 +8,10 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
       resources :logs, only: [:index]
       resources :users do
-        resources :logs, only: [:create, :show, :update]
+        resources :logs, only: [:create, :show]
       end
-      resources :log_foods, only: [:index, :create, :update, :destroy]
-      resources :foods, only: [:index, :create, :update, :destroy]
+      resources :log_foods, only: [:index, :create, :destroy]
+      resources :foods, only: [:index]
     end
   end
 

@@ -13,8 +13,8 @@ class Api::V1::LogFoodsController < ApplicationController
     end
   end
 
-  def update
-  end
+  # def update
+  # end
 
   def destroy
     @log_food = LogFood.find_by(id: params[:id])
