@@ -29,3 +29,5 @@
   quick_add.each do |entry|
     formatted_foods.push({name: entry[0], quantity: entry[1], unit: entry[2], carb: entry[3], protein: entry[4], fat: entry[5]})
   end
+
+  more_foods = Food.create(formatted_foods)
