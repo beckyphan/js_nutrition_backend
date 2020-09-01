@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_031831) do
   end
 
   create_table "log_foods", force: :cascade do |t|
-    t.integer "quantity"
+    t.float "quantity"
     t.bigint "log_id", null: false
     t.bigint "food_id", null: false
     t.datetime "created_at", precision: 6, null: false
