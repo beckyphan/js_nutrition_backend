@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_23_031831) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.integer "quantity"
+    t.float "quantity"
     t.string "unit"
     t.integer "carb"
     t.integer "protein"
