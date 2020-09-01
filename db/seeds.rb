@@ -15,7 +15,7 @@
 
   quick_add = [
     ["apple", 1, "large unit(s)", 34, 0, 1],
-    ["avocado", 0.2, "medium unit(s)", 3, 4.5, 1],
+    ["avocado", 1, "medium unit(s)", 12, 3, 24],
     ["banana", 1, "medium unit(s)", 30, 0, 1],
     ["cherries", 1, "cup(s)", 26, 0, 1],
     ["grapes", 0.75, "cup(s)", 23, 0, 0],
