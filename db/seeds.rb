@@ -19,7 +19,7 @@
     ["banana", 1, "medium unit(s)", 30, 0, 1],
     ["cherries", 1, "cup(s)", 26, 0, 1],
     ["grapes", 0.75, "cup(s)", 23, 0, 0],
-    ["pineapple", 2, '3" x 3/4" thick slice(s)', 13, 0, 1],
+    ["pineapple", 2, "3\" x 3/4\" thick slice(s)", 13, 0, 1],
     ["strawberries", 8, "medium unit(s)", 11, 0, 1],
     ["watermelon", 2, "diced cup(s)", 21, 0, 1]
   ]
