@@ -11,7 +11,8 @@ class Api::V1::LogsController < ApplicationController
       @log.save
       render json: LogSerializer.new(@log), status: 200
     else
-      @log = Log.find_by(log_param)
+      @user = User.find_by_id(params[:user_id])
+      @log = @user.logs.find_by(log_param)
       redirect_to action: "show", id: @log.id
     end
   end

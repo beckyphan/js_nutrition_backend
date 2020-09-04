@@ -1,6 +1,6 @@
 class Log < ApplicationRecord
   belongs_to :user
-  validates :caldate, :uniqueness => true
+  validates :caldate, uniqueness: { scope: :user, message: "each user can have one log daily" }
   has_many :log_foods
   has_many :foods, through: :log_foods
 
@@ -20,7 +20,7 @@ class Log < ApplicationRecord
       total_protein += (food.protein * multiplier)
       total_fat += (food.fat * multiplier)
     end
-    
+
     total.push(total_carb)
     total.push(total_protein)
     total.push(total_fat)
