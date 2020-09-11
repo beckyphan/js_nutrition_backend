@@ -5,7 +5,7 @@ The purpose of this application is for users to be able to set their daily targe
 
 ## Installation
 
-This javascript frontend should be paired with its associated frontend. [js_nutrition_backend](https://github.com/beckyphan/js_nutrition_frontend).
+This javascript frontend should be paired with its associated frontend. [js_nutrition_frontend](https://github.com/beckyphan/js_nutrition_frontend).
 Clone both repositories on your local machine, ensuring they are in the same directory (not within one another).
 
 ```bash
