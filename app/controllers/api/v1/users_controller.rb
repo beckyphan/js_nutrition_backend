@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
 
     if !@user && @new_user.valid?
       @new_user.save!
-      render json: {user: UserSerializer.new(@new_user)}, status: 200
+      render json: {user: UserSerializer.new(@new_user).serializable_hash}, status: 200
     else
       @new_user.save
       render json: {errors: @new_user.errors.full_messages}, status: 400
@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
   def login
     @user = User.find_by(email: login_params[:email])
     if @user && @user.authenticate(user_params[:password])
-      render json: {user: UserSerializer.new(@user)}, status: 200
+      render json: {user: UserSerializer.new(@user).serializable_hash}, status: 200
     elsif @user
       render json: {errors: "Failed to Authenticate"}, status: 400
     else
